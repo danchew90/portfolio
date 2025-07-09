@@ -1,285 +1,617 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>개발자 이력서</title>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
-    <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>이력서 - 신종원</title>
+    <meta name="theme-color" content="#3a7bd5">
+    <meta name="description" content="웹 개발자, 신종원의 이력서입니다.">
+    <meta property="og:url" content="#">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="이력서 - 신종원">
+    <meta property="og:description" content="웹 개발자, 신종원의 이력서입니다.">
+    <meta property="og:locale" content="ko_KR">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="이력서 - 신종원">
+    <meta name="twitter:description" content="웹 개발자, 신종원의 이력서입니다.">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+    <style id="mttstyle">
         /* MTT Container Styles */
-#mttContainer {
-  left: 0 !important;
-  top: 0 !important;
-  width: 1000px !important;
-  margin: 0px !important;
-  margin-left: -500px !important;
-  position: fixed !important;
-  z-index: 2147483647 !important; /* Maximum z-index to overcome overlays */
-  background: none !important;
-  pointer-events: none !important;
-  display: inline-block !important;
-  visibility: visible !important;
-  white-space: pre-line;
-}
+        #mttContainer {
+            left: 0 !important;
+            top: 0 !important;
+            width: 1000px !important;
+            margin: 0px !important;
+            margin-left: -500px !important;
+            position: fixed !important;
+            z-index: 2147483647 !important;
+            background: none !important;
+            pointer-events: none !important;
+            display: inline-block !important;
+            visibility: visible !important;
+            white-space: pre-line;
+        }
 
-/* Tippy Box Styles */
-.tippy-box[data-theme~="custom"], 
-.tippy-box[data-theme~="ocr"], 
-.tippy-content * {
-  font-size: 14px !important;
-  text-align: center !important;
-  overflow-wrap: break-word !important;
-  color: #ffffffff !important;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif !important;
-  white-space: pre-line;
-}
+        .tippy-box[data-theme~="custom"], 
+        .tippy-box[data-theme~="ocr"], 
+        .tippy-content * {
+            font-size: 14px !important;
+            text-align: center !important;
+            overflow-wrap: break-word !important;
+            color: #ffffffff !important;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif !important;
+            white-space: pre-line;
+        }
 
-.tippy-box[data-theme~="custom"] {
-  max-width: 200px !important;
-  backdrop-filter: blur(4px) !important;
-  background-color: #000000b8 !important;
-  border: 1px solid #ffffff00;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-  opacity: 1.0; /* Adjusted opacity for transparency */
-}
+        .tippy-box[data-theme~="custom"] {
+            max-width: 200px !important;
+            backdrop-filter: blur(4px) !important;
+            background-color: #000000b8 !important;
+            border: 1px solid #ffffff00;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+            opacity: 1.0;
+        }
 
-.tippy-box[data-theme~="ocr"] {
-  max-width: 1000px !important;
-  backdrop-filter: blur(4px) !important;
-  background-color: #000000b8 !important;
-  border: 1px solid #ffffff00;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-  opacity: 1.0; /* Adjusted opacity for transparency */
-}
+        .tippy-box[data-theme~="ocr"] {
+            max-width: 1000px !important;
+            backdrop-filter: blur(4px) !important;
+            background-color: #000000b8 !important;
+            border: 1px solid #ffffff00;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+            opacity: 1.0;
+        }
 
-.tippy-box[data-theme~="transparent"] {
-  max-width: 1000px !important;
-  backdrop-filter: blur(4px) !important;
-  background-color: #000000b8 !important;
-  border: 1px solid #ffffff00;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-  opacity: 0.0; /* Adjusted opacity for transparency */
-  transition: opacity 0.3s ease-in-out; /* Added transition for opacity */
-}
+        .tippy-box[data-theme~="transparent"] {
+            max-width: 1000px !important;
+            backdrop-filter: blur(4px) !important;
+            background-color: #000000b8 !important;
+            border: 1px solid #ffffff00;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+            opacity: 0.0;
+            transition: opacity 0.3s ease-in-out;
+        }
 
-[data-tippy-root] {
-  display: inline-block !important;
-  visibility: visible !important;
-  position: absolute !important;
-}
+        [data-tippy-root] {
+            display: inline-block !important;
+            visibility: visible !important;
+            position: absolute !important;
+        }
 
-/* Tippy Arrow Styles */
-.tippy-box[data-theme~='custom'][data-placement^='top'] > .tippy-arrow::before,
-.tippy-box[data-theme~='ocr'][data-placement^='top'] > .tippy-arrow::before {
-  border-top-color: #000000b8 !important;
-}
+        /* Tippy Arrow Styles */
+        .tippy-box[data-theme~='custom'][data-placement^='top'] > .tippy-arrow::before,
+        .tippy-box[data-theme~='ocr'][data-placement^='top'] > .tippy-arrow::before {
+            border-top-color: #000000b8 !important;
+        }
 
-.tippy-box[data-theme~='custom'][data-placement^='bottom'] > .tippy-arrow::before,
-.tippy-box[data-theme~='ocr'][data-placement^='bottom'] > .tippy-arrow::before {
-  border-bottom-color: #000000b8 !important;
-}
+        .tippy-box[data-theme~='custom'][data-placement^='bottom'] > .tippy-arrow::before,
+        .tippy-box[data-theme~='ocr'][data-placement^='bottom'] > .tippy-arrow::before {
+            border-bottom-color: #000000b8 !important;
+        }
 
-.tippy-box[data-theme~='custom'][data-placement^='left'] > .tippy-arrow::before,
-.tippy-box[data-theme~='ocr'][data-placement^='left'] > .tippy-arrow::before {
-  border-left-color: #000000b8 !important;
-}
+        .tippy-box[data-theme~='custom'][data-placement^='left'] > .tippy-arrow::before,
+        .tippy-box[data-theme~='ocr'][data-placement^='left'] > .tippy-arrow::before {
+            border-left-color: #000000b8 !important;
+        }
 
-.tippy-box[data-theme~='custom'][data-placement^='right'] > .tippy-arrow::before,
-.tippy-box[data-theme~='ocr'][data-placement^='right'] > .tippy-arrow::before {
-  border-right-color: #000000b8 !important;
-}
+        .tippy-box[data-theme~='custom'][data-placement^='right'] > .tippy-arrow::before,
+        .tippy-box[data-theme~='ocr'][data-placement^='right'] > .tippy-arrow::before {
+            border-right-color: #000000b8 !important;
+        }
 
-/* MTT Highlight Styles */
-.mtt-highlight {
-  background-color: #21dc6d40 !important;
-  position: absolute !important;
-  z-index: 2147483646 !important; /* Slightly lower than tooltip */
-  pointer-events: none !important;
-  display: inline !important;
-  border-radius: 3px !important;
-}
+        /* MTT Highlight Styles */
+        .mtt-highlight {
+            background-color: #21dc6d40 !important;
+            position: absolute !important;
+            z-index: 2147483646 !important;
+            pointer-events: none !important;
+            display: inline !important;
+            border-radius: 3px !important;
+        }
 
-.mtt-image {
-  width: 180px !important;
-  border-radius: 3px !important;
-}
+        .mtt-image {
+            width: 180px !important;
+            border-radius: 3px !important;
+        }
 
-.ocr_text_div {
-  position: absolute;
-  opacity: 0.4;
-  color: transparent !important;
-  border: 2px solid CornflowerBlue;
-  background: none !important;
-  border-radius: 3px !important;
-}
+        .ocr_text_div {
+            position: absolute;
+            opacity: 0.4;
+            color: transparent !important;
+            border: 2px solid CornflowerBlue;
+            background: none !important;
+            border-radius: 3px !important;
+        }
 
-/* YouTube Caption Styles */
-#ytp-caption-window-container .ytp-caption-segment {
-  cursor: text !important;
-  user-select: text !important;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif !important;
-}
+        /* Main Resume Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-.caption-visual-line {
-  display: flex !important;
-  align-items: stretch !important;
-  direction: ltr
-}
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
 
-.captions-text .caption-visual-line:first-of-type:after {
-  content: '⣿⣿';
-  border-radius: 3px !important;
-  color: white !important;
-  background: transparent !important;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-  display: inline-block;
-  vertical-align: top;
-  opacity: 0;
-  transition: opacity 0.7s ease-in-out;
-}
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
 
-.ytp-caption-segment {
-  color: white !important;
-  text-shadow: 1px 1px 2px black !important;
-  backdrop-filter: blur(3px) !important;
-  background: rgba(8, 8, 8, 0.1) !important;
-}
+        section {
+            margin-bottom: 60px;
+        }
 
-.captions-text:hover .caption-visual-line:first-of-type:after {
-  opacity: 1;
-}
+        h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
 
-.ytp-pause-overlay {
-  display: none !important;
-}
+        h2 {
+            font-size: 1.8em;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: #34495e;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
 
-.ytp-expand-pause-overlay .caption-window {
-  display: block !important;
-}
+        h3 {
+            font-size: 1.4em;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+
+        h4 {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #34495e;
+        }
+
+        h5 {
+            font-size: 1em;
+            font-weight: 600;
+            margin-bottom: 8px;
+            margin-top: 15px;
+            color: #7f8c8d;
+        }
+
+        .period-mark {
+            color: #3498db;
+        }
+
+        .big-paragraph {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .row {
+            display: flex;
+            margin-bottom: 40px;
+            gap: 30px;
+        }
+
+        .row-left {
+            flex: 0 0 200px;
+            min-width: 200px;
+        }
+
+        .row-right {
+            flex: 1;
+        }
+
+        .role {
+            display: block;
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin-bottom: 5px;
+        }
+
+        .time {
+            display: block;
+            font-size: 0.9em;
+            color: #95a5a6;
+            margin-bottom: 5px;
+        }
+
+        .duration {
+            display: block;
+            font-size: 0.85em;
+            color: #bdc3c7;
+        }
+
+        .project {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .project:last-child {
+            border-bottom: none;
+        }
+
+        .project h4 {
+            margin-bottom: 8px;
+        }
+
+        .project .time {
+            margin-bottom: 15px;
+        }
+
+        .project p {
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .project ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .project ul li {
+            margin-bottom: 5px;
+            line-height: 1.6;
+        }
+
+        .tech-stack {
+            background-color: #f8f9fa;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            color: #495057;
+            border-left: 4px solid #3498db;
+        }
+
+        .tech-stack strong {
+            color: #2c3e50;
+        }
+
+        .other {
+            margin-bottom: 30px;
+        }
+
+        .other h3 {
+            margin-bottom: 15px;
+        }
+
+        .other ul {
+            margin-left: 20px;
+        }
+
+        .other ul li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .other p {
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+
+        .contact-list {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .contact-list li {
+            margin-bottom: 10px;
+        }
+
+        .contact-list a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .contact-list a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            .row {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .row-left {
+                flex: none;
+                min-width: auto;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+    <style id="mttstyleSubtitle">
+        #ytp-caption-window-container .ytp-caption-segment {
+            cursor: text !important;
+            user-select: text !important;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif !important;
+        }
+
+        .caption-visual-line {
+            display: flex !important;
+            align-items: stretch !important;
+            direction: ltr
+        }
+
+        .captions-text .caption-visual-line:first-of-type:after {
+            content: '⣿⣿';
+            border-radius: 3px !important;
+            color: white !important;
+            background: transparent !important;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+            display: inline-block;
+            vertical-align: top;
+            opacity: 0;
+            transition: opacity 0.7s ease-in-out;
+        }
+
+        .ytp-caption-segment {
+            color: white !important;
+            text-shadow: 1px 1px 2px black !important;
+            backdrop-filter: blur(3px) !important;
+            background: rgba(8, 8, 8, 0.1) !important;
+        }
+
+        .captions-text:hover .caption-visual-line:first-of-type:after {
+            opacity: 1;
+        }
+
+        .ytp-pause-overlay {
+            display: none !important;
+        }
+
+        .ytp-expand-pause-overlay .caption-window {
+            display: block !important;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <section>
-            <h1>반갑습니다,<br />저는 신종원입니다<span class="period-mark">.</span></h1>
+            <h1>
+                안녕하세요,<br>저는 신종원입니다<span class="period-mark">.</span>
+            </h1>
             <p class="big-paragraph">
-                서울에서 웹 개발자로 일하고 있으며, 다양한 프로젝트를 통해 풀스택 개발 경험을 쌓아왔습니다. 사용자 중심의 서비스 개발을 좋아하며, 새로운 기술을 학습하고 적용하는 것에 관심이 많습니다. 팀워크를 중시하며 효율적인 개발 프로세스 구축에 기여하고자 합니다.
+                새로운 도전과 변화를 두려워하지 않는 개발자 신종원입니다. 2021년부터 개발을 시작하여 현재 4년 차로, 지속가능한 코드와 확장성을 고려한 개발을 지향하고 있습니다.<br>
+                다양한 산업군의 SI 프로젝트를 경험하며 프론트엔드 중심으로 개발해왔고, 필요에 따라 SQL을 활용한 간단한 백엔드 작업과 Node.js 크롤링도 수행한 경험이 있습니다.<br>
+                React 및 React Native 기반 웹·앱 개발을 주력으로 하며, 하이브리드 앱과 웹뷰 프로젝트, Native 모듈 개발 및 웹-앱 간 통신 구현에 능숙합니다.<br>
+                Spring Boot와 MariaDB를 활용한 백엔드 유지보수 경험도 보유하고 있습니다.
             </p>
         </section>
 
         <section>
             <h2>Work Experience<span class="period-mark">.</span></h2>
-
             <div class="row">
                 <div class="row-left">
                     <h3>주식회사 씽크트리<span class="period-mark">.</span></h3>
                     <span class="role">Software Developer</span>
-                    <span class="time"><time datetime="2023-11">2023. 11</time> - 재직 중</span>
-                    <span class="duration">(1년 9개월)</span>
+                    <span class="time">
+                        <time datetime="2023-11">2023. 11</time> - 재직 중
+                    </span>
                 </div>
                 <div class="row-right">
                     <div class="project">
                         <h4>입찰길잡이 - 건축 입찰 매칭 시스템<span class="period-mark">.</span></h4>
-                        <span class="time"><time datetime="2023-11">2023. 11</time> - 현재</span>
+                        <span class="time">2023.11 - 현재</span>
                         <h5>Description<span class="period-mark">.</span></h5>
-                        <p>건축 자재 및 설계 출품자와 입찰자를 매칭하는 플랫폼을 개발하고 있습니다.</p>
+                        <p>건축 자재 및 설계 서비스 출품자와 입찰자를 매칭하는 플랫폼 개발</p>
                         <h5>What did I do<span class="period-mark">.</span></h5>
                         <ul>
                             <li>프론트엔드 및 백오피스 개발</li>
                             <li>입찰 매칭 시스템 구현</li>
-                            <li>사용자 관리 시스템 개발</li>
                         </ul>
-                        <div class="tech-stack"><strong>Tech Stack:</strong> Spring (Thymeleaf), jQuery, MariaDB</div>
+                        <h5>Tech Stack<span class="period-mark">.</span></h5>
+                        <p>Spring (Thymeleaf), jQuery, MariaDB</p>
                     </div>
-
                     <div class="project">
                         <h4>GM Korea - 전자계약 시스템 및 앱 배지 컨트롤<span class="period-mark">.</span></h4>
                         <h5>Description<span class="period-mark">.</span></h5>
-                        <p>웹-앱 간 통신 및 앱 배지 컨트롤 시스템을 개발했습니다.</p>
+                        <p>GM 코리아 전자 계약 시스템을 이용하는 카매니저용 애플리케이션 개발</p>
                         <h5>What did I do<span class="period-mark">.</span></h5>
                         <ul>
-                            <li>웹-앱 간 통신 (React Native InjectJavaScript) 구현</li>
-                            <li>앱 배지 컨트롤을 위한 Native 모듈 개발</li>
-                            <li>전자계약 시스템 개발</li>
+                            <li>웹-앱 간 통신(React Native InjectJavaScript) 구현</li>
+                            <li>앱 Notification Badge 컨트롤을 위한 Native 모듈 개발</li>
                         </ul>
-                        <div class="tech-stack"><strong>Tech Stack:</strong> React Native</div>
+                        <h5>Tech Stack<span class="period-mark">.</span></h5>
+                        <p>React Native</p>
                     </div>
-
                     <div class="project">
                         <h4>국민대학교 연구과제 - 생활 기록 데이터 트래킹 앱<span class="period-mark">.</span></h4>
                         <h5>Description<span class="period-mark">.</span></h5>
-                        <p>WebView 기반의 백그라운드 위치 트래킹 기능을 가진 앱을 개발했습니다.</p>
+                        <p>유저의 생활 기록 데이터를 수집 및 전송하는 WebView 기반 앱 개발</p>
                         <h5>What did I do<span class="period-mark">.</span></h5>
                         <ul>
                             <li>WebView 기반 하이브리드 앱 개발</li>
                             <li>백그라운드 위치 트래킹 기능 구현</li>
-                            <li>생활 기록 데이터 수집 시스템 개발</li>
                         </ul>
-                        <div class="tech-stack"><strong>Tech Stack:</strong> React Native</div>
+                        <h5>Tech Stack<span class="period-mark">.</span></h5>
+                        <p>React Native</p>
                     </div>
-
                     <div class="project">
                         <h4>고양 YMCA - 홈페이지 및 회원 관리 시스템<span class="period-mark">.</span></h4>
                         <h5>Description<span class="period-mark">.</span></h5>
-                        <p>강좌 구독, 사물함 관리, 키즈카페 출입/프린터 연동 시스템을 개발했습니다.</p>
+                        <p>강좌 구독, 사물함 관리, 키즈카페 출입 시스템 및 프린터 연동 개발</p>
                         <h5>What did I do<span class="period-mark">.</span></h5>
                         <ul>
-                            <li>강좌 구독 및 회원 관리 기능 개발</li>
-                            <li>출입 관리 및 프린터 연동 시스템 구축</li>
-                            <li>관리자 페이지 개발</li>
+                            <li>강좌 구독 및 사물함, 회원 관리 시스템 개발</li>
+                            <li>키즈카페 출입 시스템 및 프린터 연동 구현</li>
                         </ul>
-                        <div class="tech-stack"><strong>Tech Stack:</strong> Spring, JSP, jQuery, MySQL</div>
+                        <h5>Tech Stack<span class="period-mark">.</span></h5>
+                        <p>JSP, Spring, JavaFX, MariaDB</p>
                     </div>
-
                     <div class="project">
-                        <h4>NHN 커머스 - PDF 변환 시스템 안정화<span class="period-mark">.</span></h4>
+                        <h4>르노 캐피탈 - 전자계약 시스템 유지보수<span class="period-mark">.</span></h4>
                         <h5>Description<span class="period-mark">.</span></h5>
-                        <p>PhantomJS 기반 PDF 엔진을 Jasper 리포트로 전환하여 PDF 생성 안정성을 높였습니다.</p>
+                        <p>기존 Phantom 기반 PDF 계약서 추출 기능을 Jasper로 변경, 시스템 오류 수정 및 유지보수</p>
                         <h5>What did I do<span class="period-mark">.</span></h5>
                         <ul>
                             <li>Jasper 리포트 기반 PDF 변환 구현</li>
-                            <li>생성 속도 및 안정성 개선</li>
+                            <li>시스템 오류 수정 및 유지보수</li>
                         </ul>
-                        <div class="tech-stack"><strong>Tech Stack:</strong> Jasper Report, Spring</div>
+                        <h5>Tech Stack<span class="period-mark">.</span></h5>
+                        <p>JSP, Spring, MariaDB</p>
+                    </div>
+                    <div class="project">
+                        <h4>Swip - 사내 커뮤니티 하이브리드 앱 개발<span class="period-mark">.</span></h4>
+                        <h5>Description<span class="period-mark">.</span></h5>
+                        <p>투표, 자유게시판, 캘린더, 주소록, 알림, 사내 영상교육 기능 개발</p>
+                        <h5>Tech Stack<span class="period-mark">.</span></h5>
+                        <p>Spring (Thymeleaf), React Native, Firebase, MariaDB</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="row-left">
+                    <h3>주식회사 코드바다<span class="period-mark">.</span></h3>
+                    <span class="role">Software Developer</span>
+                    <span class="time">
+                        <time datetime="2021-08">2021. 08</time> - 2023. 10
+                    </span>
+                </div>
+                <div class="row-right">
+                    <div class="project">
+                        <h4>장애인 교육 플랫폼 - 서로<span class="period-mark">.</span></h4>
+                        <span class="time">2023.07 - 2023.10</span>
+                        <h5>What did I do<span class="period-mark">.</span></h5>
+                        <ul>
+                            <li>React를 사용한 관리자 페이지 개발</li>
+                        </ul>
+                    </div>
+                    <div class="project">
+                        <h4>자동 세차 예약 시스템 - 카스파<span class="period-mark">.</span></h4>
+                        <span class="time">2023.06</span>
+                        <h5>What did I do<span class="period-mark">.</span></h5>
+                        <ul>
+                            <li>React를 이용한 관리자 페이지 개발</li>
+                        </ul>
+                    </div>
+                    <div class="project">
+                        <h4>자녀관리 어플 - 라우드유<span class="period-mark">.</span></h4>
+                        <span class="time">2023.05 - 2023.07</span>
+                        <h5>What did I do<span class="period-mark">.</span></h5>
+                        <ul>
+                            <li>React Native를 이용한 자녀관리 어플 개발</li>
+                        </ul>
+                    </div>
+                    <div class="project">
+                        <h4>부동산 중개 - 집스 (2차 고도화)<span class="period-mark">.</span></h4>
+                        <span class="time">2023.03 - 2023.05</span>
+                        <h5>What did I do<span class="period-mark">.</span></h5>
+                        <ul>
+                            <li>프론트화면 고도화 및 전체 아파트 단지 시세 Node.js 크롤링</li>
+                        </ul>
+                    </div>
+                    <div class="project">
+                        <h4>김포공항 - 스마트 계류장 관제 플랫폼<span class="period-mark">.</span></h4>
+                        <span class="time">2023.02 - 2023.05</span>
+                        <h5>What did I do<span class="period-mark">.</span></h5>
+                        <ul>
+                            <li>관제 모니터 부가 데이터 인터랙티브 구현</li>
+                            <li>관제 카메라 시야각 계산 및 표현</li>
+                        </ul>
+                    </div>
+                    <div class="project">
+                        <h4>스마트 농가 관리 - 스마트 팜<span class="period-mark">.</span></h4>
+                        <span class="time">2022.09 - 2023.01</span>
+                        <h5>What did I do<span class="period-mark">.</span></h5>
+                        <ul>
+                            <li>스마트 농장 데이터 인터랙티브 어드민 페이지 개발</li>
+                            <li>농장 원격 관리 기능 구현</li>
+                        </ul>
+                        <h5>Tech Stack<span class="period-mark">.</span></h5>
+                        <p>Java, JSP, MariaDB</p>
+                    </div>
+                    <div class="project">
+                        <h4>부동산 중개 - 집스 (1차 개발)<span class="period-mark">.</span></h4>
+                        <span class="time">2022.01 - 2022.10</span>
+                        <h5>What did I do<span class="period-mark">.</span></h5>
+                        <ul>
+                            <li>React, React Native를 사용한 백오피스 및 고객용 어플 개발</li>
+                        </ul>
+                    </div>
+                    <div class="project">
+                        <h4>KG에듀원 - 쌤플러스<span class="period-mark">.</span></h4>
+                        <span class="time">2021.09 - 2023.10</span>
+                        <h5>What did I do<span class="period-mark">.</span></h5>
+                        <ul>
+                            <li>Vue를 사용한 관리자 페이지, 호텔 소개 및 예약 시스템 개발</li>
+                        </ul>
+                    </div>
+                    <div class="project">
+                        <h4>파라스파라<span class="period-mark">.</span></h4>
+                        <span class="time">2021.09 - 2021.12</span>
+                        <h5>What did I do<span class="period-mark">.</span></h5>
+                        <ul>
+                            <li>Vue를 사용한 관리자 페이지 개발</li>
+                        </ul>
+                        <h5>Tech Stack<span class="period-mark">.</span></h5>
+                        <p>JSP, Spring, MariaDB</p>
+                    </div>
+                    <div class="project">
+                        <h4>Zeeps - 부동산 중개 애플리케이션<span class="period-mark">.</span></h4>
+                        <h5>What did I do<span class="period-mark">.</span></h5>
+                        <ul>
+                            <li>위치 기반 매물 정보 제공 및 하이브리드 앱 개발, React Native WebView 활용</li>
+                        </ul>
+                        <h5>Tech Stack<span class="period-mark">.</span></h5>
+                        <p>React, React Native, Spring, MariaDB</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section>
-            <h2>Skills<span class="period-mark">.</span></h2>
+            <h2>Education<span class="period-mark">.</span></h2>
+            <div class="other">
+                <ul>
+                    <li>가톨릭관동대학교 미디작곡 (2009.03 - 2010.02, 중퇴)</li>
+                    <li>인천 진산고등학교 이과 (2006.02 - 2009.02)</li>
+                </ul>
+            </div>
+        </section>
 
+        <section>
+            <h2>Skills<span class="period-mark">.</span></h2>
             <div class="other">
-                <h3>Frontend Frameworks / Libraries<span class="period-mark">.</span></h3>
+                <h3>Frontend<span class="period-mark">.</span></h3>
                 <ul>
-                    <li>React</li>
-                    <li>Next.js</li>
-                    <li>Vue.js</li>
-                    <li>jQuery</li>
+                    <li>JavaScript, React, TypeScript, HTML, CSS, React.js, VueJS, React Native, jQuery</li>
                 </ul>
             </div>
             <div class="other">
-                <h3>Backend Frameworks / Libraries<span class="period-mark">.</span></h3>
+                <h3>Backend<span class="period-mark">.</span></h3>
                 <ul>
-                    <li>Spring Framework (Spring Boot, MVC, Security, Batch, Cloud)</li>
-                    <li>Node.js</li>
-                    <li>Express.js</li>
+                    <li>Java, Spring Boot, Node.js, JSP, Express.js</li>
                 </ul>
             </div>
             <div class="other">
-                <h3>Database & Cache<span class="period-mark">.</span></h3>
+                <h3>Database<span class="period-mark">.</span></h3>
                 <ul>
-                    <li>MariaDB / MySQL</li>
-                    <li>Redis</li>
-                </ul>
-            </div>
-            <div class="other">
-                <h3>Tools & Others<span class="period-mark">.</span></h3>
-                <ul>
-                    <li>Git, GitHub</li>
-                    <li>Docker, Kubernetes</li>
-                    <li>Jira, Confluence</li>
-                    <li>Jenkins, Travis CI</li>
+                    <li>MariaDB, MySQL</li>
                 </ul>
             </div>
         </section>
@@ -287,10 +619,8 @@
         <section>
             <h2>Contact<span class="period-mark">.</span></h2>
             <ul class="contact-list">
-                <li><a href="mailto:your.email@example.com">이메일</a></li>
-                <li><a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">깃허브</a></li>
-                <li><a href="https://www.linkedin.com/in/yourprofile/" target="_blank" rel="noopener noreferrer">링크드인</a></li>
-                <li><a href="tel:010-0000-0000">전화번호</a></li>
+                <li><a href="mailto:danchew90@naver.com">이메일</a></li>
+                <li>전화번호: 010-3924-1182</li>
             </ul>
         </section>
     </div>
