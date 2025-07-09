@@ -1,164 +1,583 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>이력서 - 신종원</title>
-  <style>
-    body { font-family: sans-serif; padding: 20px; line-height: 1.6; }
-    h1, h2, h3 { color: #333; }
-    .company { margin-top: 2em; }
-    .project { margin-left: 1em; margin-bottom: 1.5em; }
-    .period { font-weight: bold; color: #555; }
-    .role-title { font-style: italic; color: #777; }
-    ul { margin: 0.5em 0; padding-left: 1.2em; }
-    hr { margin: 2em 0; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개발자 이력서</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: white;
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #34495e;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #34495e;
+            margin-bottom: 8px;
+        }
+
+        h5 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #7f8c8d;
+            margin-bottom: 5px;
+            margin-top: 15px;
+        }
+
+        .period-mark {
+            color: #3498db;
+        }
+
+        .big-paragraph {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .row {
+            display: flex;
+            margin-bottom: 40px;
+            gap: 30px;
+        }
+
+        .row-left {
+            flex: 0 0 200px;
+            padding-right: 20px;
+        }
+
+        .row-right {
+            flex: 1;
+        }
+
+        .role {
+            display: block;
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            margin-bottom: 5px;
+        }
+
+        .time {
+            font-size: 0.85rem;
+            color: #95a5a6;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .project {
+            margin-bottom: 35px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .project:last-child {
+            border-bottom: none;
+        }
+
+        .project .time {
+            color: #3498db;
+            font-weight: 500;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        p {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .other {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .other:last-child {
+            border-bottom: none;
+        }
+
+        .other h3 {
+            color: #34495e;
+            margin-bottom: 8px;
+        }
+
+        .other .role {
+            color: #7f8c8d;
+            font-weight: 500;
+        }
+
+        .other .time {
+            color: #95a5a6;
+            margin-bottom: 10px;
+        }
+
+        .contact-list {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .contact-list li {
+            margin-bottom: 10px;
+        }
+
+        .contact-list a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-list a:hover {
+            color: #2980b9;
+        }
+
+        .tech-stack {
+            background-color: #f8f9fa;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .duration {
+            font-weight: 600;
+            color: #e74c3c;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
+            .row {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .row-left {
+                flex: none;
+                padding-right: 0;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <section>
+            <h1>반갑습니다,<br>저는 신종원입니다<span class="period-mark">.</span></h1>
+            <p class="big-paragraph">
+                서울에서 웹 개발자로 일하고 있으며, 다양한 프로젝트를 통해 풀스택 개발 경험을 쌓아왔습니다. 
+                사용자 중심의 서비스 개발을 좋아하며, 새로운 기술을 학습하고 적용하는 것에 관심이 많습니다. 
+                팀워크를 중시하며 효율적인 개발 프로세스 구축에 기여하고자 합니다.
+            </p>
+        </section>
 
-<h1>이현섭</h1>
-<p>서울에서 활동 중인 7년차 웹 프론트엔드 엔지니어입니다. 아름다운 UI와 애니메이션 구현에 관심이 많으며, 주도적인 업무 환경을 선호합니다. 개발자의 가치는 비즈니스 가치를 실현하는 데 있다고 믿습니다.</p>
+        <section>
+            <h2>Work Experience<span class="period-mark">.</span></h2>
+            
+            <div class="row">
+                <div class="row-left">
+                    <h3>주식회사 씽크트리<span class="period-mark">.</span></h3>
+                    <span class="role">Software Developer</span>
+                    <span class="time">
+                        <time datetime="2023-11">2023. 11</time> - 재직 중
+                    </span>
+                    <span class="duration">(1년 9개월)</span>
+                </div>
+                <div class="row-right">
+                    <div class="project">
+                        <h4>입찰길잡이 - 건축 입찰 매칭 시스템<span class="period-mark">.</span></h4>
+                        <span class="time">
+                            <time datetime="2023-11">2023. 11</time> - 현재
+                        </span>
+                        <h5>Description<span class="period-mark">.</span></h5>
+                        <p>
+                            건축 자재 및 설계 출품자와 입찰자를 매칭하는 플랫폼을 개발하고 있습니다.
+                        </p>
+                        <h5>What did I do<span class="period-mark">.</span></h5>
+                        <ul>
+                            <li>프론트엔드 및 백오피스 개발</li>
+                            <li>입찰 매칭 시스템 구현</li>
+                            <li>사용자 관리 시스템 개발</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <strong>Tech Stack:</strong> Spring (Thymeleaf), jQuery, MariaDB
+                        </div>
+                    </div>
 
-<hr>
+                    <div class="project">
+                        <h4>GM Korea - 전자계약 시스템 및 앱 배지 컨트롤<span class="period-mark">.</span></h4>
+                        <h5>Description<span class="period-mark">.</span></h5>
+                        <p>
+                            웹-앱 간 통신 및 앱 배지 컨트롤 시스템을 개발했습니다.
+                        </p>
+                        <h5>What did I do<span class="period-mark">.</span></h5>
+                        <ul>
+                            <li>웹-앱 간 통신 (React Native InjectJavaScript) 구현</li>
+                            <li>앱 배지 컨트롤을 위한 Native 모듈 개발</li>
+                            <li>전자계약 시스템 개발</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <strong>Tech Stack:</strong> React Native
+                        </div>
+                    </div>
 
-<h2>경력</h2>
+                    <div class="project">
+                        <h4>국민대학교 연구과제 - 생활 기록 데이터 트래킹 앱<span class="period-mark">.</span></h4>
+                        <h5>Description<span class="period-mark">.</span></h5>
+                        <p>
+                            WebView 기반의 백그라운드 위치 트래킹 기능을 가진 앱을 개발했습니다.
+                        </p>
+                        <h5>What did I do<span class="period-mark">.</span></h5>
+                        <ul>
+                            <li>WebView 기반 하이브리드 앱 개발</li>
+                            <li>백그라운드 위치 트래킹 기능 구현</li>
+                            <li>생활 기록 데이터 수집 시스템 개발</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <strong>Tech Stack:</strong> React Native
+                        </div>
+                    </div>
 
-<div class="company">
-  <h3>주식회사 씽크트리 <span class="period">(2023.11 - 재직 중, 1년 9개월)</span></h3>
-  
-  <div class="project">
-    <strong>입찰길잡이 - 건축 입찰 매칭 시스템</strong>
-    <ul>
-      <li>건축 자재 및 설계 출품자와 입찰자를 매칭하는 플랫폼 개발</li>
-      <li>프론트엔드 및 백오피스 개발</li>
-      <li>Spring (Thymeleaf), jQuery, MariaDB</li>
-    </ul>
-  </div>
+                    <div class="project">
+                        <h4>고양 YMCA - 홈페이지 및 회원 관리 시스템<span class="period-mark">.</span></h4>
+                        <h5>Description<span class="period-mark">.</span></h5>
+                        <p>
+                            강좌 구독, 사물함 관리, 키즈카페 출입/프린터 연동 시스템을 개발했습니다.
+                        </p>
+                        <h5>What did I do<span class="period-mark">.</span></h5>
+                        <ul>
+                            <li>강좌 구독 시스템 개발</li>
+                            <li>사물함 관리 시스템 구현</li>
+                            <li>키즈카페 출입/프린터 연동 기능 개발</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <strong>Tech Stack:</strong> JSP, Spring, JavaFX, MariaDB
+                        </div>
+                    </div>
 
-  <div class="project">
-    <strong>GM Korea - 전자계약 시스템 및 앱 배지 컨트롤</strong>
-    <ul>
-      <li>웹-앱 간 통신 (React Native InjectJavaScript)</li>
-      <li>앱 배지 컨트롤을 위한 Native 모듈 개발</li>
-      <li>React Native</li>
-    </ul>
-  </div>
+                    <div class="project">
+                        <h4>르노 캐피탈 - 전자계약 시스템 유지보수<span class="period-mark">.</span></h4>
+                        <h5>Description<span class="period-mark">.</span></h5>
+                        <p>
+                            기존 전자계약 시스템의 PDF 추출 엔진을 개선했습니다.
+                        </p>
+                        <h5>What did I do<span class="period-mark">.</span></h5>
+                        <ul>
+                            <li>Phantom → Jasper로 PDF 계약서 추출 엔진 변경</li>
+                            <li>시스템 안정성 개선</li>
+                            <li>유지보수 및 버그 수정</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <strong>Tech Stack:</strong> JSP, Spring, MariaDB
+                        </div>
+                    </div>
 
-  <div class="project">
-    <strong>국민대학교 연구과제 - 생활 기록 데이터 트래킹 앱</strong>
-    <ul>
-      <li>WebView 기반, 백그라운드 위치 트래킹 기능</li>
-      <li>React Native</li>
-    </ul>
-  </div>
+                    <div class="project">
+                        <h4>Swip - 사내 커뮤니티 하이브리드 앱<span class="period-mark">.</span></h4>
+                        <h5>Description<span class="period-mark">.</span></h5>
+                        <p>
+                            투표, 자유게시판, 캘린더, 영상교육 기능을 가진 사내 커뮤니티 앱을 개발했습니다.
+                        </p>
+                        <h5>What did I do<span class="period-mark">.</span></h5>
+                        <ul>
+                            <li>투표 시스템 개발</li>
+                            <li>자유게시판 및 캘린더 기능 구현</li>
+                            <li>영상교육 시스템 개발</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <strong>Tech Stack:</strong> Spring (Thymeleaf), React Native, Firebase, MariaDB
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-  <div class="project">
-    <strong>고양 YMCA - 홈페이지 및 회원 관리 시스템</strong>
-    <ul>
-      <li>강좌 구독, 사물함 관리, 키즈카페 출입/프린터 연동</li>
-      <li>JSP, Spring, JavaFX, MariaDB</li>
-    </ul>
-  </div>
+            <div class="row">
+                <div class="row-left">
+                    <h3>주식회사 코드바다<span class="period-mark">.</span></h3>
+                    <span class="role">Software Developer</span>
+                    <span class="time">
+                        <time datetime="2021-08">2021. 08</time> - <time datetime="2023-10">2023. 10</time>
+                    </span>
+                    <span class="duration">(2년 3개월)</span>
+                </div>
+                <div class="row-right">
+                    <div class="project">
+                        <h4>서로 - 장애인 교육 플랫폼<span class="period-mark">.</span></h4>
+                        <h5>Description<span class="period-mark">.</span></h5>
+                        <p>
+                            장애인을 위한 교육 플랫폼의 관리자 페이지를 개발했습니다.
+                        </p>
+                        <h5>What did I do<span class="period-mark">.</span></h5>
+                        <ul>
+                            <li>React 기반 관리자 페이지 개발</li>
+                            <li>교육 콘텐츠 관리 시스템 구현</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <strong>Tech Stack:</strong> React
+                        </div>
+                    </div>
 
-  <div class="project">
-    <strong>르노 캐피탈 - 전자계약 시스템 유지보수</strong>
-    <ul>
-      <li>Phantom → Jasper로 PDF 계약서 추출 변경</li>
-      <li>JSP, Spring, MariaDB</li>
-    </ul>
-  </div>
+                    <div class="project">
+                        <h4>카스파 - 자동 세차 예약 시스템<span class="period-mark">.</span></h4>
+                        <h5>Description<span class="period-mark">.</span></h5>
+                        <p>
+                            자동 세차 예약 시스템의 관리자 페이지를 개발했습니다.
+                        </p>
+                        <h5>What did I do<span class="period-mark">.</span></h5>
+                        <ul>
+                            <li>React 기반 관리자 페이지 개발</li>
+                            <li>예약 관리 시스템 구현</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <strong>Tech Stack:</strong> React
+                        </div>
+                    </div>
 
-  <div class="project">
-    <strong>Swip - 사내 커뮤니티 하이브리드 앱</strong>
-    <ul>
-      <li>투표, 자유게시판, 캘린더, 영상교육 기능 개발</li>
-      <li>Spring (Thymeleaf), React Native, Firebase, MariaDB</li>
-    </ul>
-  </div>
-</div>
+                    <div class="project">
+                        <h4>라우드유 - 자녀관리 어플<span class="period-mark">.</span></h4>
+                        <h5>Description<span class="period-mark">.</span></h5>
+                        <p>
+                            자녀 관리를 위한 모바일 애플리케이션을 개발했습니다.
+                        </p>
+                        <h5>What did I do<span class="period-mark">.</span></h5>
+                        <ul>
+                            <li>React Native 기반 어플리케이션 개발</li>
+                            <li>자녀 관리 기능 구현</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <strong>Tech Stack:</strong> React Native
+                        </div>
+                    </div>
 
-<div class="company">
-  <h3>주식회사 코드바다 <span class="period">(2021.08 - 2023.10, 2년 3개월)</span></h3>
+                    <div class="project">
+                        <h4>집스 (2차 고도화) - 부동산 중개<span class="period-mark">.</span></h4>
+                        <h5>Description<span class="period-mark">.</span></h5>
+                        <p>
+                            부동산 중개 시스템의 2차 고도화 작업을 진행했습니다.
+                        </p>
+                        <h5>What did I do<span class="period-mark">.</span></h5>
+                        <ul>
+                            <li>Node.js 기반 크롤링 시스템으로 시세 수집</li>
+                            <li>고객용 화면 고도화 작업</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <strong>Tech Stack:</strong> Node.js
+                        </div>
+                    </div>
 
-  <div class="project">
-    <strong>서로 - 장애인 교육 플랫폼</strong>
-    <ul>
-      <li>React 관리자 페이지 개발</li>
-    </ul>
-  </div>
+                    <div class="project">
+                        <h4>김포공항 - 스마트 계류장 관제 플랫폼<span class="period-mark">.</span></h4>
+                        <h5>Description<span class="period-mark">.</span></h5>
+                        <p>
+                            김포공항의 스마트 계류장 관제를 위한 플랫폼을 개발했습니다.
+                        </p>
+                        <h5>What did I do<span class="period-mark">.</span></h5>
+                        <ul>
+                            <li>6x8 모형 패널 드래그 앤 드롭 기능 구현</li>
+                            <li>카메라 시야각 시각화 기능 개발</li>
+                        </ul>
+                    </div>
 
-  <div class="project">
-    <strong>카스파 - 자동 세차 예약 시스템</strong>
-    <ul>
-      <li>React 관리자 페이지 개발</li>
-    </ul>
-  </div>
+                    <div class="project">
+                        <h4>스마트 팜 - 스마트 농가 관리<span class="period-mark">.</span></h4>
+                        <h5>Description<span class="period-mark">.</span></h5>
+                        <p>
+                            스마트 농가 관리를 위한 시스템을 개발했습니다.
+                        </p>
+                        <h5>What did I do<span class="period-mark">.</span></h5>
+                        <ul>
+                            <li>농장 원격 제어 시스템 개발</li>
+                            <li>데이터 시각화 어드민 페이지 개발</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <strong>Tech Stack:</strong> Java, JSP, MariaDB
+                        </div>
+                    </div>
 
-  <div class="project">
-    <strong>라우드유 - 자녀관리 어플</strong>
-    <ul>
-      <li>React Native 어플 개발</li>
-    </ul>
-  </div>
+                    <div class="project">
+                        <h4>집스 (1차 개발) - 부동산 중개<span class="period-mark">.</span></h4>
+                        <h5>Description<span class="period-mark">.</span></h5>
+                        <p>
+                            부동산 중개 시스템의 초기 개발을 담당했습니다.
+                        </p>
+                        <h5>What did I do<span class="period-mark">.</span></h5>
+                        <ul>
+                            <li>React 기반 고객용 시스템 개발</li>
+                            <li>React Native 기반 모바일 앱 개발</li>
+                            <li>백오피스 시스템 개발</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <strong>Tech Stack:</strong> React, React Native
+                        </div>
+                    </div>
 
-  <div class="project">
-    <strong>집스 (2차 고도화) - 부동산 중개</strong>
-    <ul>
-      <li>Node 크롤링 기반 시세 수집, 고객용 화면 고도화</li>
-    </ul>
-  </div>
+                    <div class="project">
+                        <h4>KG에듀원 - 쌤플러스<span class="period-mark">.</span></h4>
+                        <h5>Description<span class="period-mark">.</span></h5>
+                        <p>
+                            교육 관련 시스템의 관리자 페이지와 호텔 예약 시스템을 개발했습니다.
+                        </p>
+                        <h5>What did I do<span class="period-mark">.</span></h5>
+                        <ul>
+                            <li>Vue.js 기반 관리자 페이지 개발</li>
+                            <li>호텔 예약 시스템 구현</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <strong>Tech Stack:</strong> Vue.js
+                        </div>
+                    </div>
 
-  <div class="project">
-    <strong>김포공항 - 스마트 계류장 관제 플랫폼</strong>
-    <ul>
-      <li>6x8 모형 패널 드래그 앤 드롭, 카메라 시야각 시각화</li>
-    </ul>
-  </div>
+                    <div class="project">
+                        <h4>파라스파라<span class="period-mark">.</span></h4>
+                        <h5>Description<span class="period-mark">.</span></h5>
+                        <p>
+                            파라스파라 프로젝트의 관리자 페이지를 개발했습니다.
+                        </p>
+                        <h5>What did I do<span class="period-mark">.</span></h5>
+                        <ul>
+                            <li>Vue.js 기반 관리자 페이지 개발</li>
+                            <li>백엔드 시스템 연동</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <strong>Tech Stack:</strong> Vue.js, JSP, Spring, MariaDB
+                        </div>
+                    </div>
 
-  <div class="project">
-    <strong>스마트 팜 - 스마트 농가 관리</strong>
-    <ul>
-      <li>농장 원격 제어, 데이터 시각화 어드민 페이지 개발</li>
-      <li>Java, JSP, MariaDB</li>
-    </ul>
-  </div>
+                    <div class="project">
+                        <h4>Zeeps - 부동산 중개 앱<span class="period-mark">.</span></h4>
+                        <h5>Description<span class="period-mark">.</span></h5>
+                        <p>
+                            부동산 중개를 위한 하이브리드 모바일 앱을 개발했습니다.
+                        </p>
+                        <h5>What did I do<span class="period-mark">.</span></h5>
+                        <ul>
+                            <li>React Native WebView 활용 하이브리드 앱 개발</li>
+                            <li>부동산 중개 기능 구현</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <strong>Tech Stack:</strong> React, React Native, Spring, MariaDB
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <div class="project">
-    <strong>집스 (1차 개발) - 부동산 중개</strong>
-    <ul>
-      <li>React, React Native 기반 고객용 및 백오피스 개발</li>
-    </ul>
-  </div>
+        <section>
+            <h2>Skills<span class="period-mark">.</span></h2>
+            
+            <div class="other">
+                <h3>Frontend<span class="period-mark">.</span></h3>
+                <ul>
+                    <li>React, Vue.js를 활용한 모던 웹 개발</li>
+                    <li>React Native를 이용한 크로스 플랫폼 모바일 앱 개발</li>
+                    <li>JavaScript, TypeScript에 능숙</li>
+                    <li>반응형 웹 디자인 및 사용자 경험 최적화</li>
+                </ul>
+            </div>
 
-  <div class="project">
-    <strong>KG에듀원 - 쌤플러스</strong>
-    <ul>
-      <li>Vue 관리자 페이지, 호텔 예약 시스템 개발</li>
-    </ul>
-  </div>
+            <div class="other">
+                <h3>Backend<span class="period-mark">.</span></h3>
+                <ul>
+                    <li>Spring Framework를 활용한 백엔드 개발</li>
+                    <li>Node.js 기반 서버 사이드 개발</li>
+                    <li>JSP, Thymeleaf 템플릿 엔진 활용</li>
+                    <li>RESTful API 설계 및 구현</li>
+                </ul>
+            </div>
 
-  <div class="project">
-    <strong>파라스파라</strong>
-    <ul>
-      <li>Vue 기반 관리자 페이지 개발</li>
-      <li>JSP, Spring, MariaDB</li>
-    </ul>
-  </div>
+            <div class="other">
+                <h3>Database<span class="period-mark">.</span></h3>
+                <ul>
+                    <li>MariaDB, MySQL 데이터베이스 설계 및 관리</li>
+                    <li>효율적인 쿼리 작성 및 성능 최적화</li>
+                    <li>데이터 모델링 및 정규화</li>
+                </ul>
+            </div>
 
-  <div class="project">
-    <strong>Zeeps - 부동산 중개 앱</strong>
-    <ul>
-      <li>React Native WebView 활용 하이브리드 앱 개발</li>
-      <li>React, React Native, Spring, MariaDB</li>
-    </ul>
-  </div>
-</div>
+            <div class="other">
+                <h3>Others<span class="period-mark">.</span></h3>
+                <ul>
+                    <li>Git을 활용한 버전 관리</li>
+                    <li>팀 협업 및 코드 리뷰</li>
+                    <li>웹 크롤링 및 데이터 수집</li>
+                    <li>Firebase 등 클라우드 서비스 활용</li>
+                </ul>
+            </div>
+        </section>
 
-<hr>
-
-<h2>학력</h2>
-<p>금오공과대학교 컴퓨터소프트웨어공학과 (2010.03 - 2018.02)</p>
-
+        <section>
+            <h2>Contact<span class="period-mark">.</span></h2>
+            <ul class="contact-list">
+                <li><a href="mailto:your.email@example.com">이메일</a></li>
+                <li><a href="https://github.com/yourusername" target="_blank">깃허브</a></li>
+                <li><a href="https://www.linkedin.com/in/yourprofile/" target="_blank">링크드인</a></li>
+                <li><a href="tel:010-0000-0000">전화번호</a></li>
+            </ul>
+        </section>
+    </div>
 </body>
 </html>
