@@ -6,221 +6,155 @@
     <title>개발자 이력서</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+/* MTT Container Styles */
+        #mttContainer {
+        left: 0 !important;
+        top: 0 !important;
+        width: 1000px !important;
+        margin: 0px !important;
+        margin-left: -500px !important;
+        position: fixed !important;
+        z-index: 2147483647 !important; /* Maximum z-index to overcome overlays */
+        background: none !important;
+        pointer-events: none !important;
+        display: inline-block !important;
+        visibility: visible !important;
+        white-space: pre-line;
         }
 
-        body {
-            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
+        /* Tippy Box Styles */
+        .tippy-box[data-theme~="custom"], 
+        .tippy-box[data-theme~="ocr"], 
+        .tippy-content * {
+        font-size: 14px !important;
+        text-align: center !important;
+        overflow-wrap: break-word !important;
+        color: #ffffffff !important;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif !important;
+        white-space: pre-line;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            background-color: white;
-            min-height: 100vh;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        .tippy-box[data-theme~="custom"] {
+        max-width: 200px !important;
+        backdrop-filter: blur(4px) !important;
+        background-color: #000000b8 !important;
+        border: 1px solid #ffffff00;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        opacity: 1.0; /* Adjusted opacity for transparency */
         }
 
-        section {
-            margin-bottom: 50px;
+        .tippy-box[data-theme~="ocr"] {
+        max-width: 1000px !important;
+        backdrop-filter: blur(4px) !important;
+        background-color: #000000b8 !important;
+        border: 1px solid #ffffff00;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        opacity: 1.0; /* Adjusted opacity for transparency */
         }
 
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #2c3e50;
-            margin-bottom: 20px;
-            line-height: 1.2;
+        .tippy-box[data-theme~="transparent"] {
+        max-width: 1000px !important;
+        backdrop-filter: blur(4px) !important;
+        background-color: #000000b8 !important;
+        border: 1px solid #ffffff00;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        opacity: 0.0; /* Adjusted opacity for transparency */
+        transition: opacity 0.3s ease-in-out; /* Added transition for opacity */
         }
 
-        h2 {
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: #34495e;
-            margin-bottom: 30px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #3498db;
+        [data-tippy-root] {
+        display: inline-block !important;
+        visibility: visible !important;
+        position: absolute !important;
         }
 
-        h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 5px;
+        /* Tippy Arrow Styles */
+        .tippy-box[data-theme~='custom'][data-placement^='top'] > .tippy-arrow::before,
+        .tippy-box[data-theme~='ocr'][data-placement^='top'] > .tippy-arrow::before {
+        border-top-color: #000000b8 !important;
         }
 
-        h4 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #34495e;
-            margin-bottom: 8px;
+        .tippy-box[data-theme~='custom'][data-placement^='bottom'] > .tippy-arrow::before,
+        .tippy-box[data-theme~='ocr'][data-placement^='bottom'] > .tippy-arrow::before {
+        border-bottom-color: #000000b8 !important;
         }
 
-        h5 {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: #7f8c8d;
-            margin-bottom: 5px;
-            margin-top: 15px;
+        .tippy-box[data-theme~='custom'][data-placement^='left'] > .tippy-arrow::before,
+        .tippy-box[data-theme~='ocr'][data-placement^='left'] > .tippy-arrow::before {
+        border-left-color: #000000b8 !important;
         }
 
-        .period-mark {
-            color: #3498db;
+        .tippy-box[data-theme~='custom'][data-placement^='right'] > .tippy-arrow::before,
+        .tippy-box[data-theme~='ocr'][data-placement^='right'] > .tippy-arrow::before {
+        border-right-color: #000000b8 !important;
         }
 
-        .big-paragraph {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 20px;
+        /* MTT Highlight Styles */
+        .mtt-highlight {
+        background-color: #21dc6d40 !important;
+        position: absolute !important;
+        z-index: 2147483646 !important; /* Slightly lower than tooltip */
+        pointer-events: none !important;
+        display: inline !important;
+        border-radius: 3px !important;
         }
 
-        .row {
-            display: flex;
-            margin-bottom: 40px;
-            gap: 30px;
+        .mtt-image {
+        width: 180px !important;
+        border-radius: 3px !important;
         }
 
-        .row-left {
-            flex: 0 0 200px;
-            padding-right: 20px;
+        .ocr_text_div {
+        position: absolute;
+        opacity: 0.4;
+        color: transparent !important;
+        border: 2px solid CornflowerBlue;
+        background: none !important;
+        border-radius: 3px !important;
         }
 
-        .row-right {
-            flex: 1;
+        /* YouTube Caption Styles */
+        #ytp-caption-window-container .ytp-caption-segment {
+        cursor: text !important;
+        user-select: text !important;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif !important;
         }
 
-        .role {
-            display: block;
-            font-size: 0.9rem;
-            color: #7f8c8d;
-            margin-bottom: 5px;
+        .caption-visual-line {
+        display: flex !important;
+        align-items: stretch !important;
+        direction: ltr
         }
 
-        .time {
-            font-size: 0.85rem;
-            color: #95a5a6;
-            display: block;
-            margin-bottom: 10px;
+        .captions-text .caption-visual-line:first-of-type:after {
+        content: '⣿⣿';
+        border-radius: 3px !important;
+        color: white !important;
+        background: transparent !important;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+        display: inline-block;
+        vertical-align: top;
+        opacity: 0;
+        transition: opacity 0.7s ease-in-out;
         }
 
-        .project {
-            margin-bottom: 35px;
-            padding-bottom: 25px;
-            border-bottom: 1px solid #ecf0f1;
+        .ytp-caption-segment {
+        color: white !important;
+        text-shadow: 1px 1px 2px black !important;
+        backdrop-filter: blur(3px) !important;
+        background: rgba(8, 8, 8, 0.1) !important;
         }
 
-        .project:last-child {
-            border-bottom: none;
+        .captions-text:hover .caption-visual-line:first-of-type:after {
+        opacity: 1;
         }
 
-        .project .time {
-            color: #3498db;
-            font-weight: 500;
+        .ytp-pause-overlay {
+        display: none !important;
         }
 
-        ul {
-            margin-left: 20px;
-            margin-bottom: 10px;
-        }
-
-        li {
-            margin-bottom: 8px;
-            line-height: 1.6;
-        }
-
-        p {
-            margin-bottom: 10px;
-            line-height: 1.6;
-        }
-
-        .other {
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #ecf0f1;
-        }
-
-        .other:last-child {
-            border-bottom: none;
-        }
-
-        .other h3 {
-            color: #34495e;
-            margin-bottom: 8px;
-        }
-
-        .other .role {
-            color: #7f8c8d;
-            font-weight: 500;
-        }
-
-        .other .time {
-            color: #95a5a6;
-            margin-bottom: 10px;
-        }
-
-        .contact-list {
-            list-style: none;
-            margin-left: 0;
-        }
-
-        .contact-list li {
-            margin-bottom: 10px;
-        }
-
-        .contact-list a {
-            color: #3498db;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .contact-list a:hover {
-            color: #2980b9;
-        }
-
-        .tech-stack {
-            background-color: #f8f9fa;
-            padding: 10px 15px;
-            border-radius: 5px;
-            font-size: 0.9rem;
-            color: #666;
-            margin-top: 10px;
-        }
-
-        .duration {
-            font-weight: 600;
-            color: #e74c3c;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px 15px;
-            }
-            
-            .row {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .row-left {
-                flex: none;
-                padding-right: 0;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            h2 {
-                font-size: 1.5rem;
-            }
+        .ytp-expand-pause-overlay .caption-window {
+        display: block !important;
         }
     </style>
 </head>
